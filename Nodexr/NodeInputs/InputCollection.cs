@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeInputs;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.Nodes;
 
 public class InputCollection : NodeInputBase<IReadOnlyCollection<INodeViewModel>>

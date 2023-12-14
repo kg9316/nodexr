@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeInputs;
-using BlazorNodes.Core;
+using Nodexr.Core;
 
 public readonly record struct IntRange(int? Min, int? Max);
 

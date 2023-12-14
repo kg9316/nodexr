@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public class CommentNode : RegexNodeViewModelBase
@@ -7,7 +7,7 @@ public class CommentNode : RegexNodeViewModelBase
     public override string Title => "Comment";
     public override string NodeInfo => "Inserts a comment block, which will be ignored by the Regex engine.";
 
-    [NodeInput]
+    [NodeProperty]
     protected InputString Input { get; } = new InputString("");
 
     public CommentNode() { }

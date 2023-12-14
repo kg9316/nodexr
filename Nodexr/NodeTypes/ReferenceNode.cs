@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -8,18 +8,18 @@ public class ReferenceNode : RegexNodeViewModelBase
     public override string Title => "Reference";
     public override string NodeInfo => "Inserts a backreference (or forward-reference if the language supports it) to a captured group, either by name or index.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<InputTypes> InputType { get; } = new InputDropdown<InputTypes>()
     { Title = "Type:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputNumber InputIndex { get; } = new InputNumber(1, min: 1)
     {
         Title = "Index:",
         Description = "The index (number) of the group to reference."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputName { get; } = new InputString("")
     {
         Title = "Name:",

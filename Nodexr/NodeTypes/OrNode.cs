@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -9,14 +9,14 @@ public class OrNode : RegexNodeViewModelBase
 
     public override string NodeInfo => "Outputs a Regex that will accept any of the given inputs.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputCapture { get; } = new InputCheckbox(false)
     {
         Title = "Capture",
         Description = "Store the result using a capturing group."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCollection Inputs { get; } = new InputCollection("Option");
 
     public OrNode()

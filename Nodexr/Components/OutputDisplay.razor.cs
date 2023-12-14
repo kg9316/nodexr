@@ -42,7 +42,7 @@ public partial class OutputDisplay
     private void OnEditSubmitted(string newExpression)
     {
         isEditing = false;
-        NodeHandler.TryCreateTreeFromRegex(newExpression.Trim('\n', '\r'));
+        //NodeHandler.TryCreateTreeFromRegex(newExpression.Trim('\n', '\r'));
     }
 
     private void OnEditCancelled()

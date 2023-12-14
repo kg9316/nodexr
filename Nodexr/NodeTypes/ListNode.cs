@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -12,21 +12,21 @@ public class ListNode : RegexNodeViewModelBase
         "\n\nWarning: this node is marked as 'Experimental' because it will not be preserved " +
         "after using the 'Create Link' or 'Edit' buttons.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural InputContents { get; } = new InputProcedural()
     {
         Title = "List Item",
         Description = "The node or set of nodes to match multiple times.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputSeparator { get; } = new InputString(",")
     {
         Title = "Separator:",
         Description = "The separator character or string to match between each list item.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputListLength { get; } = new InputRange(1, null)
     {
         Title = "List Length:",
@@ -35,21 +35,21 @@ public class ListNode : RegexNodeViewModelBase
         AutoClearMax = true,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowWhitespace { get; } = new InputCheckbox(true)
     {
         Title = "Allow Whitespace",
         Description = "If checked, whitespace is allowed between each list item (after the separator).",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowRegex { get; } = new InputCheckbox(false)
     {
         Title = "Regex in Separator",
         Description = "If checked, the separator will be interpreted as a full regular expression, instead of text.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputLazyQuantifier { get; } = new InputCheckbox(false)
     {
         Title = "Lazy Quantifier",

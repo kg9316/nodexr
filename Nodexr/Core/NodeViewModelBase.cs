@@ -1,4 +1,6 @@
-﻿namespace BlazorNodes.Core;
+﻿namespace Nodexr.Core;
+
+
 using System.Reflection;
 
 public interface INodeOutput

@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public class UnicodeNode : RegexNodeViewModelBase
@@ -8,13 +8,13 @@ public class UnicodeNode : RegexNodeViewModelBase
 
     public override string NodeInfo => "Insert a unicode category, unicode block, or the hex value of a unicode/ascii character.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Modes> InputMode { get; } = new InputDropdown<Modes>(modeDisplayNames) { Title = "Mode" };
-    [NodeInput]
+    [NodeProperty]
     public InputString InputCategory { get; } = new InputString("IsBasicLatin") { Title = "Unicode Category" };
-    [NodeInput]
+    [NodeProperty]
     public InputString InputHexCode { get; } = new InputString("1e22") { Title = "Hex Code" };
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputInvert { get; } = new InputCheckbox() { Title = "Invert" };
 
     public enum Modes

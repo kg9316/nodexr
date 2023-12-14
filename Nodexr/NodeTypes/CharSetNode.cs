@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using static Nodexr.NodeTypes.IQuantifiableNode;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
@@ -12,31 +12,31 @@ public class CharSetNode : RegexNodeViewModelBase, IQuantifiableNode
         + "You can enter these the same way you would in a normal regex, including ranges (e.g. A-Z).\n"
         + "The 'Invert' option creates a negated class by adding a ^ character at the start.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputCharacters { get; } = new InputString("a-z")
     {
         Title = "Characters:",
         Description = "The list of characters or character ranges to match."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputDoInvert { get; } = new InputCheckbox(false)
     {
         Title = "Invert",
         Description = "Match everything except the specified characters."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Reps> InputCount { get; } = new InputDropdown<Reps>(displayNames)
     {
         Title = "Repetitions:",
         Description = "Apply a quantifier to this node."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputNumber InputNumber { get; } = new InputNumber(0, min: 0) { Title = "Amount:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputRange { get; } = new InputRange(0, 1)
     {
         Title = "Amount:",

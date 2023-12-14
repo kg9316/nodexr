@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public class OutputNode : RegexNodeViewModelBase
@@ -11,7 +11,7 @@ public class OutputNode : RegexNodeViewModelBase
         "(This is equivalent to using the Anchor node)." +
         "\nNote: The \"Start/End of string\" options will match the starts and ends of individual lines when in Multiline mode.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Mode> InputStartsAt { get; } = new InputDropdown<Mode>(
         new Dictionary<Mode, string>()
         {
@@ -24,7 +24,7 @@ public class OutputNode : RegexNodeViewModelBase
         Description = "Only accept matches that start at this location."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Mode> InputEndsAt { get; } = new InputDropdown<Mode>(
         new Dictionary<Mode, string>()
         {

@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Microsoft.JSInterop;
 
 public static class ExtensionMethods

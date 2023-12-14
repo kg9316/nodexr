@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.Nodes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public abstract class RegexNodeViewModelBase : NodeViewModelBase<NodeResult>

@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.Nodes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 
 public static class NodeExtensionMethods
 {

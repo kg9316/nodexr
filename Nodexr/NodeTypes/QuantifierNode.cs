@@ -1,7 +1,7 @@
 ﻿namespace Nodexr.NodeTypes;
 using static Nodexr.NodeTypes.IQuantifiableNode;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -15,14 +15,14 @@ public class QuantifierNode : RegexNodeViewModelBase, IQuantifiableNode
         "\nThe .NET Regex engine does not support possessive quantifiers, so they are automatically replaced " +
         "by atomic groups (which are functionally identical).";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural InputContents { get; } = new InputProcedural()
     {
         Title = "Input",
         Description = "The node or set of nodes that will be matched the chosen number of times.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Reps> InputCount { get; } = new InputDropdown<Reps>(displayNamesExcludingOne)
     {
         Title = "Repetitions:",
@@ -30,10 +30,10 @@ public class QuantifierNode : RegexNodeViewModelBase, IQuantifiableNode
         Value = Reps.OneOrMore,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputNumber InputNumber { get; } = new InputNumber(0, min: 0) { Title = "Amount:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputRange { get; } = new InputRange(0, 1)
     {
         Title = "Amount:",
@@ -42,7 +42,7 @@ public class QuantifierNode : RegexNodeViewModelBase, IQuantifiableNode
         AutoClearMax = true,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<SearchMode> InputSearchType { get; } = new InputDropdown<SearchMode>()
     {
         Title = "Search type:",

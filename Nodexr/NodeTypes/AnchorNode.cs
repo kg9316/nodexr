@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -11,7 +11,7 @@ public class AnchorNode : RegexNodeViewModelBase
         "Useful for ensuring that your regex only matches if it's at a specific position in a line." +
         "\nNote: The \"Start/End of string\" options will match the starts and ends of individual lines when in Multiline mode.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Mode> InputAnchorType { get; } = new InputDropdown<Mode>(modeDisplayNames) { Title = "Type of anchor:" };
 
     public static readonly Dictionary<Mode, string> modeDisplayNames = new()

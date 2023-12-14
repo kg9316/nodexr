@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using static Nodexr.NodeTypes.IQuantifiableNode;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public class WildcardNode : RegexNodeViewModelBase, IQuantifiableNode
@@ -12,49 +12,49 @@ public class WildcardNode : RegexNodeViewModelBase, IQuantifiableNode
         "\nUse the 'Repetitions' option to add a quantifier with the selected number or range of repetitions " +
         "(If you need a possessive or lazy quantifer, use a Quantifer node instead).";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<WildcardType> InputType { get; } = new InputDropdown<WildcardType>(presetDisplayNames) { Title = "Type:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputMatchNewline { get; } = new InputCheckbox(false)
     {
         Title = "Match newlines",
         Description = "Also match newline (\\n) characters"
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputInvert { get; } = new InputCheckbox(false)
     {
         Title = "Invert",
         Description = "Match everything except the specified characters."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowWhitespace { get; } = new InputCheckbox(false) { Title = "Whitespace" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowUppercase { get; } = new InputCheckbox(true) { Title = "Uppercase Letters" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowLowercase { get; } = new InputCheckbox(true) { Title = "Lowercase Letters" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowDigits { get; } = new InputCheckbox(true) { Title = "Digits" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllowUnderscore { get; } = new InputCheckbox(true) { Title = "Underscore" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Reps> InputCount { get; } = new InputDropdown<Reps>(displayNames)
     {
         Title = "Repetitions:",
         Description = "Apply a quantifier to this node."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputNumber InputNumber { get; } = new InputNumber(0, min: 0) { Title = "Amount:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputRange { get; } = new InputRange(0, 1)
     {
         Title = "Amount:",

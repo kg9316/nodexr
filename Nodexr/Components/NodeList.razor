@@ -14,14 +14,14 @@
 @code {
     List<(string name, List<RegexNodeViewModelBase> nodes)> exampleCategories = new()
     {
-        ("Basics",
+        ("Normal",
         new ()
         {
             new TextNode(),
             new GroupNode(),
         }),
 
-        ("Wildcards",
+        ("Utvidet",
         new ()
         {
             new WildcardNode(),
@@ -30,14 +30,14 @@
             new UnicodeNode(),
         }),
 
-        ("Alternation",
+        ("Endringer",
         new ()
         {
             new OrNode(),
             new IfElseNode(),
         }),
 
-        ("Repetition",
+        ("Repitisjon",
         new ()
         {
             new QuantifierNode(),
@@ -52,14 +52,14 @@
             new LookaroundNode(),
         }),
 
-        ("Other",
+        ("Andre",
         new ()
         {
             new CommentNode(),
             new FlagNode(),
         }),
 
-        ("Experimental",
+        ("Eksprimentell",
         new ()
         {
             new DecimalNode(),

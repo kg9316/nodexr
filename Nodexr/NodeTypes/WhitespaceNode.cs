@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using static Nodexr.NodeTypes.IQuantifiableNode;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 
 public class WhitespaceNode : RegexNodeViewModelBase, IQuantifiableNode
@@ -10,39 +10,39 @@ public class WhitespaceNode : RegexNodeViewModelBase, IQuantifiableNode
     public override string NodeInfo => "Matches any of the specified types of whitespace character." +
         "\nIf 'Invert' is checked, matches everything BUT the specified types of whitespace character.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputInvert { get; } = new InputCheckbox(false)
     {
         Title = "Invert",
         Description = "Match everything except the specified types of whitespace.\nThis includes all non-whitespace characters."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputAllWhitespace { get; } = new InputCheckbox(true) { Title = "All Whitespace" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputSpace { get; } = new InputCheckbox(true) { Title = "Space" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputTab { get; } = new InputCheckbox(true) { Title = "Tab" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputCR { get; } = new InputCheckbox(true) { Title = "Newline (\\r)" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputLF { get; } = new InputCheckbox(true) { Title = "Newline (\\n)" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Reps> InputCount { get; } = new InputDropdown<Reps>(displayNames)
     {
         Title = "Repetitions:",
         Description = "Apply a quantifier to this node."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputNumber InputNumber { get; } = new InputNumber(0, min: 0) { Title = "Amount:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputRange { get; } = new InputRange(0, 1)
     {
         Title = "Amount:",

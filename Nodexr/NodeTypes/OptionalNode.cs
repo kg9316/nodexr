@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -10,7 +10,7 @@ public class OptionalNode : RegexNodeViewModelBase
     public override string NodeInfo => "Makes the input nodes optional. " +
         "This is equivalent to using a Quantifier node with Repetitions: 'Zero or one'.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural InputContents { get; } = new InputProcedural()
     {
         Title = "Input",

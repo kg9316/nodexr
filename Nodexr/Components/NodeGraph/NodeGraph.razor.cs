@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using Nodexr.Utils;
 using Nodexr.NodeInputs;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Microsoft.AspNetCore.Components;
 using Nodexr.Serialization;
 using Nodexr.Services;
 using System.Net.Http.Json;
-using Nodexr.Api.Contracts.NodeTrees;
+using Nodexr.NodeTrees;
 using System.Text.Json;
 using Blazored.Toast.Services;
+using Nodexr.Core;
 
 public partial class NodeGraph
 {

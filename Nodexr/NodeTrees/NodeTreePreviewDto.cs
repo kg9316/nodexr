@@ -1,4 +1,4 @@
-﻿namespace Nodexr.Api.Contracts.NodeTrees;
+﻿namespace Nodexr.NodeTrees;
 
 using System.Text.Json.Nodes;
 

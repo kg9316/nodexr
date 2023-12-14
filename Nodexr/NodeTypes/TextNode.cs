@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -13,21 +13,28 @@ public class TextNode : RegexNodeViewModelBase
         "\nNote: Backslash characters (\\), and the character immediately following them, are not escaped." +
         "\nTo insert a string with no escaping, turn off the 'Escape' option. Warning: this may create an invalid or unexpected output.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputString Input { get; } = new InputString("")
     {
-        Title = "Text:",
+        Title = "Textdsd:",
         Description = "The text to match."
     };
 
-    [NodeInput]
+    [NodeProperty]
+    public InputProcedural InputThen { get; set; } = new InputProcedural() { Title = "Match if true" };
+
+    [NodeProperty]
+    public InputProcedural InputElse { get; set; } = new InputProcedural() { Title = "Match if false" };
+
+    [NodeProperty]
     public InputCheckbox InputEscapeSpecials { get; } = new InputCheckbox(true)
     {
         Title = "Escape Specials",
         Description = "Should special characters (e.g. ^$?+) be escaped automatically?"
     };
 
-    [NodeInput]
+    
+    [NodeProperty]
     public InputCheckbox InputEscapeBackslash { get; } = new InputCheckbox(false)
     {
         Title = "Escape Backslash",

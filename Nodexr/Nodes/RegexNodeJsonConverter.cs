@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.Nodes;
 
-using BlazorNodes.Core;
+using Nodexr.Core;
 using System;
 using System.Text.Json;
 using System.Text.Json.Nodes;

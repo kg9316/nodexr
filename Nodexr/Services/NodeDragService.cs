@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 
 public interface INodeDragService
 {

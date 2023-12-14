@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -15,14 +15,14 @@ public class DecimalNode : RegexNodeViewModelBase
         "\n\nWarning: this node is marked as 'Experimental' because it will not be preserved " +
         "after using the 'Create Link' or 'Edit' buttons.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<SignType> InputSign { get; } = new InputDropdown<SignType>()
     {
         Title = "Sign",
         Description = "Should the number have a sign (+-)?"
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputDecimalSeparator { get; } = new InputString(".")
     {
         Title = "Decimal Separator(s)",
@@ -30,21 +30,21 @@ public class DecimalNode : RegexNodeViewModelBase
             "If more than one character is entered, the expression will match any one of them."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputThousandsSeparator { get; } = new InputString("")
     {
         Title = "Digit Separator(s)",
         Description = "Character to separate groups of digits in the integer part of the number. Leave blank for no separator."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputOptionalDecimal { get; } = new InputCheckbox()
     {
         Title = "Optional Decimal",
         Description = "If checked, numbers with no decimal part (e.g. 10) are matched."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputOptionalInteger { get; } = new InputCheckbox()
     {
         Title = "Optional Integer",

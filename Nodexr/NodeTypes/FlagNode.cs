@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -8,17 +8,17 @@ public class FlagNode : RegexNodeViewModelBase
     public override string Title => "Flags";
     public override string NodeInfo => "Inserts flags that change the way the Regex is interpreted.\nEach flag can either be ignored (default), applied (✓), or removed (−).\nLeave the 'Contents' input empty to have the flags apply to everything that comes after them in the Regex, or connect a node to this input so that only that portion of the Regex has the flags applied.";
 
-    [NodeInput]
+    [NodeProperty]
     protected InputProcedural InputContents { get; } = new InputProcedural() { Title = "(Optional) Contents" };
-    [NodeInput]
+    [NodeProperty]
     protected InputCheckboxNullable OptionIgnoreCase { get; } = new InputCheckboxNullable() { Title = "Case Insensitive" };
-    [NodeInput]
+    [NodeProperty]
     protected InputCheckboxNullable OptionMultiline { get; } = new InputCheckboxNullable() { Title = "Multiline" };
-    [NodeInput]
+    [NodeProperty]
     protected InputCheckboxNullable OptionSingleline { get; } = new InputCheckboxNullable() { Title = "Singleline" };
-    [NodeInput]
+    [NodeProperty]
     protected InputCheckboxNullable OptionExplicitCapture { get; } = new InputCheckboxNullable() { Title = "Explicit Capture" };
-    [NodeInput]
+    [NodeProperty]
     protected InputCheckboxNullable OptionIgnoreWhitespace { get; } = new InputCheckboxNullable() { Title = "Ignore Whitespace" };
 
     protected override NodeResultBuilder GetValue()

@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -8,9 +8,9 @@ public class LookaroundNode : RegexNodeViewModelBase
     public override string Title => "Lookaround";
     public override string NodeInfo => "Converts the input node into a lookahead or lookbehind.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural Input { get; } = new InputProcedural() { Title = "Contents" };
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<Types> InputGroupType { get; } = new InputDropdown<Types>(groupTypeDisplyNames)
     { Title = "Type:" };
 

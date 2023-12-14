@@ -3,8 +3,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
-using Nodexr.Api.Contracts.NodeTrees;
-using Nodexr.Api.Contracts.Pagination;
+using Nodexr.NodeTrees;
+using Nodexr.Pagination;
 using Nodexr.Serialization;
 using System.Globalization;
 using System.Net.Http.Json;
@@ -50,7 +50,7 @@ public class NodeTreeBrowserService
     {
         if (SelectedNodeTree?.Expression is null)
             return;
-        nodeHandler.TryCreateTreeFromRegex(SelectedNodeTree.Expression);
+       // nodeHandler.TryCreateTreeFromRegex(SelectedNodeTree.Expression);
         //TODO: Load search/replace strings
     }
 

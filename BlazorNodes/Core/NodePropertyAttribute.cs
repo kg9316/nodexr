@@ -1,6 +1,6 @@
 ﻿namespace BlazorNodes.Core;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class NodeInputAttribute : Attribute
+public class NodePropertyAttribute : Attribute
 {
 }

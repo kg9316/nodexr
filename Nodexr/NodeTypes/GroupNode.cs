@@ -1,5 +1,5 @@
 ﻿namespace Nodexr.NodeTypes;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -8,21 +8,21 @@ public class GroupNode : RegexNodeViewModelBase
     public override string Title => "Group";
     public override string NodeInfo => "Wraps the input node in a group. A capturing or named group can be used later in a backrefence (with the 'Reference' node) or in the  Replacement Regex.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural Input { get; } = new InputProcedural()
     {
         Title = "Contents",
         Description = "The node or set of nodes that will be surrounded by a group."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<GroupTypes> InputGroupType { get; } = new InputDropdown<GroupTypes>(groupTypeDisplayNames)
     { Title = "Type of group:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString GroupName { get; } = new InputString("") { Title = "Name:" };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString CustomPrefix { get; } = new InputString("?") { Title = "Prefix:" };
 
     public enum GroupTypes

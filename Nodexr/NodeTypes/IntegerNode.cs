@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -14,7 +14,7 @@ public class IntegerNode : RegexNodeViewModelBase
 
     private readonly IntegerRangeGenerator rangeGenerator = new();
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<LimitType> InputLimitBy { get; } = new InputDropdown<LimitType>()
     {
         Title = "Limit By:",
@@ -22,7 +22,7 @@ public class IntegerNode : RegexNodeViewModelBase
         Value = LimitType.Nothing,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputValueRange { get; } = new InputRange(0, 99)
     {
         Title = "Range of values:",
@@ -31,7 +31,7 @@ public class IntegerNode : RegexNodeViewModelBase
         MinValue = 0,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputRange InputDigitRange { get; } = new InputRange(1, null)
     {
         Title = "Number of digits:",
@@ -41,21 +41,21 @@ public class IntegerNode : RegexNodeViewModelBase
         MinValue = 0,
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputDropdown<SignType> InputSign { get; } = new InputDropdown<SignType>()
     {
         Title = "Sign:",
         Description = "Should the number have a sign (+-)?"
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputLeadingZeros { get; } = new InputCheckbox(false)
     {
         Title = "Leading zeros?",
         Description = "Allow leading zeros in the number?",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputPreferLongest { get; } = new InputCheckbox(true)
     {
         Title = "Prefer longest",

@@ -1,6 +1,6 @@
 ﻿namespace Nodexr.NodeTypes;
 using Nodexr.Utils;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.NodeInputs;
 using Nodexr.Nodes;
 
@@ -17,7 +17,7 @@ public class RecursionNode : RegexNodeViewModelBase
         "\n\nWarning: this node is marked as 'Experimental' because it will not be preserved " +
         "after using the 'Create Link' or 'Edit' buttons.";
 
-    [NodeInput]
+    [NodeProperty]
     public InputProcedural InputContents { get; } = new InputProcedural()
     {
         Title = "Contents (Optional)",
@@ -25,21 +25,21 @@ public class RecursionNode : RegexNodeViewModelBase
         "If left empty, will match anything other than the expressions for the brackets.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputOpenBracket { get; } = new InputString("(")
     {
         Title = "Open Bracket:",
         Description = "The expression to match before recursing into the next level.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputCloseBracket { get; } = new InputString(")")
     {
         Title = "Close Bracket:",
         Description = "The expression to match before returning to the previous level.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputCaptureName { get; } = new InputString("rec")
     {
         Title = "Capture Name",
@@ -47,7 +47,7 @@ public class RecursionNode : RegexNodeViewModelBase
         "If left empty, the results will not be captured.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputString InputGroupName { get; } = new InputString("open")
     {
         Title = "Stack Group Name",
@@ -55,21 +55,21 @@ public class RecursionNode : RegexNodeViewModelBase
         "This group will be empty after a successful match.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputEnclosingBrackets { get; } = new InputCheckbox(true)
     {
         Title = "Enclosing Brackets",
         Description = "Only match expressions starting and ending with the brackets. Only the inner levels of brackets will be captured.",
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputRegexInBrackets { get; } = new InputCheckbox(false)
     {
         Title = "Regex in Brackets",
         Description = "If unchecked, the expressions for the open and close brackets will be escaped automatically."
     };
 
-    [NodeInput]
+    [NodeProperty]
     public InputCheckbox InputNoBacktracking { get; } = new InputCheckbox(false)
     {
         Title = "No Backtracking",

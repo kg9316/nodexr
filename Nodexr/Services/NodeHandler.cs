@@ -1,10 +1,9 @@
 ﻿namespace Nodexr.Services;
 using Microsoft.AspNetCore.Components;
 using Nodexr.NodeTypes;
-using Nodexr.RegexParsers;
 using Microsoft.AspNetCore.WebUtilities;
 using Blazored.Toast.Services;
-using BlazorNodes.Core;
+using Nodexr.Core;
 using Nodexr.Nodes;
 
 public interface INodeHandler
@@ -20,7 +19,7 @@ public interface INodeHandler
     void DeleteSelectedNodes();
     void ForceRefreshNodeGraph();
     void ForceRefreshNoodles();
-    void TryCreateTreeFromRegex(string regex);
+    //void TryCreateTreeFromRegex(string regex);
     void RevertPreviousParse();
 }
 
@@ -88,35 +87,9 @@ public class NodeHandler : INodeHandler
     /// <returns>Whether or not the parse attempt succeeded</returns>
     public void TryCreateTreeFromRegex(string regex)
     {
-        var parseResult = RegexParser.Parse(regex);
+        //var parseResult = RegexParser.Parse(regex);
 
-        if (parseResult.Success)
-        {
-            treePrevious = tree;
-            Tree = parseResult.Value;
-            ForceRefreshNodeGraph();
-            OnOutputChanged();
-
-            if (CachedOutput.Expression == regex)
-            {
-                var fragment = Components.ToastButton.GetRenderFragment(RevertPreviousParse, "Revert to previous");
-                toastService.ShowSuccess(fragment, "Converted to node tree successfully");
-            }
-            else
-            {
-                var fragment = Components.ToastButton.GetRenderFragment(
-                    RevertPreviousParse,
-                    "Revert to previous",
-                    "Your expression was parsed, but the resulting output is slighty different to your input. " +
-                        "This is most likely due to a simplification that has been performed automatically.\n");
-                toastService.ShowInfo(fragment, "Converted to node tree");
-            }
-        }
-        else
-        {
-            toastService.ShowError(parseResult.Error?.ToString(), "Couldn't parse input");
-            Console.WriteLine("Couldn't parse input: " + parseResult.Error);
-        }
+        
     }
 
     public void RevertPreviousParse()
@@ -187,13 +160,13 @@ public class NodeHandler : INodeHandler
         var defaultOutput = new OutputNode()
         {
             Pos = new(1100, 300),
-            PreviousNode = quoteNode2,
+            PreviousNode = quoteNode1,
         };
 
         tree.AddNode(quoteNode1);
-        tree.AddNode(quoteNode2);
-        tree.AddNode(groupNode);
-        tree.AddNode(charSetNode);
+        //tree.AddNode(quoteNode2);
+        //tree.AddNode(groupNode);
+        //tree.AddNode(charSetNode);
         tree.AddNode(defaultOutput);
         return tree;
     }
