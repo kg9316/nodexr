@@ -8,34 +8,43 @@
 
 <div id="mainpanels">
     <div style="
-        background-color: hsl(218, 18%, 18%);
+        background-color: hsl(218, 18%, 8%);
         box-shadow: 0px 4px 7px #00000033;
         z-index: 10;
         display: flex;">
-        <OutputDisplay />
-        <div style="margin-left: auto;" class="top-row-link">
-            <RegexOptionsDropdown />
-        </div>
         
-        @if (enableExpressionBrowser)
-        {
-            <a
-                @onclick="ShowExpressionBrowser" @onclick:preventDefault @onclick:stopPropagation
-                href=""
-                target="_blank"
-                class="top-row-link"
-            >
-                Expression Browser
-            </a>
-            <a
-                @onclick="ShowExpressionPublishWindow" @onclick:preventDefault @onclick:stopPropagation
-                href=""
-                target="_blank"
-                class="top-row-link"
-            >
-                Publish
-            </a>
-        }
+        
+        <OutputDisplay/>
+        <div style="margin-left: auto;" class="top-row-link">
+            <RegexOptionsDropdown/>
+        </div>
+       
+        <a
+            @onclick="ShowExpressionBrowser" @onclick:preventDefault @onclick:stopPropagation
+            href=""
+            target="_blank"
+            class="top-row-link">
+            Expression Browser
+        </a>
+        
+        <a
+            @onclick="ShowExpressionPublishWindow" @onclick:preventDefault @onclick:stopPropagation
+            href=""
+            target="_blank"
+            class="top-row-link">
+            Publish
+        </a>
+        
+        <h3
+            @onclick="ShowHelpInfo" @onclick:preventDefault @onclick:stopPropagation
+            style="margin:7px; 
+            display:inline-block; 
+            cursor: help;
+            font-size:20px;">
+            Hjelp
+        </h3>
+        @NodeTreeId
+        
     </div>
 
     <div style="display:flex; flex-direction:row; flex:1; min-height:0;">
@@ -44,14 +53,13 @@
     </div>
 </div>
 
-<BottomPanels />
 
 @code {
 
     [Parameter]
     public string? NodeTreeId { get; set; }
 
-    bool enableExpressionBrowser = false;
+    bool enableExpressionBrowser = true;
 
     protected override void OnAfterRender(bool firstRender)
     {

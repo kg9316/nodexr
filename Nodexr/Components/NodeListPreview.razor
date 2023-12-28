@@ -5,12 +5,19 @@
 
 <div class="node node-preview" draggable="true" @ondragstart="@StartNodeDrag" @ondragend="NodeDragService.CancelDrag">
     <div class="node-title collapsed" style="background-color: @Color; height:100%;">
-        <i class=@Data.NodeIcon></i>
+        @if (Data.NodeIcon.Length > 0)
+        {
+            <i class=@Data.NodeIcon></i>
+            <b> </b>
+        }
         <b> @Data.Title</b>
-        <button class="icon-button info-button"
-                @onclick="@ShowInfoModal">
-            <i class="fas fa-info-circle"></i>
-        </button>
+        @if (Data.NodeInfo.Length > 0)
+        {
+            <button class="icon-button info-button"
+                    @onclick="@ShowInfoModal">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        }
     </div>
 </div>
 
