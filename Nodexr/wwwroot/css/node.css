@@ -153,6 +153,18 @@
         border: 2px solid var(--col-bg-2);
     }
 
+    .node .node-output-dot1 {
+        width: 17px;
+        height: 17px;
+        background-color: var(--col-noodle);
+        border-radius: 50%;
+    
+        box-sizing: border-box;
+        border: 2px solid var(--col-bg-2);
+    }
+    
+    
+
     .node .node-output-dot-parent {
         position: absolute;
         top: 2px;
@@ -161,8 +173,20 @@
         z-index: 1;
         cursor: copy;
     }
+    
+    .node .node-output-dot-parent1 {
+        position: absolute;
+        top: 2px;
+        right: -15px;
+        padding: 3px;
+        z-index: 1;
+        cursor: copy;
+    }
 
         .node .node-output-dot-parent:hover .node-output-dot {
+            border: 2px solid white;
+        }
+        .node .node-output-dot-parent1:hover .node-output-dot1 {
             border: 2px solid white;
         }
         .node .node-input-dot:hover {
@@ -189,6 +213,7 @@
         }
 
         .node-input-dot:hover .outputtooltip,
+        .node-output-dot1:hover .outputtooltip,
         .node-output-dot:hover .outputtooltip {
             visibility: visible;
         }

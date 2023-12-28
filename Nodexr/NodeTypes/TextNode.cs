@@ -15,7 +15,7 @@ public class TextNode : RegexNodeViewModelBase
     [NodeProperty]
     public InputString Input { get; } = new InputString("")
     {
-        Title = "Textdsd:",
+        Title = "Text:",
         Description = "The text to match."
     };
 
