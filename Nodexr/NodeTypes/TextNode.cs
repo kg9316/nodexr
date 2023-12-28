@@ -13,6 +13,8 @@ public class TextNode : RegexNodeViewModelBase
         "\nNote: Backslash characters (\\), and the character immediately following them, are not escaped." +
         "\nTo insert a string with no escaping, turn off the 'Escape' option. Warning: this may create an invalid or unexpected output.";
 
+    public override string NodeIcon => "fas fa-envelope";
+    
     [NodeProperty]
     public InputString Input { get; } = new InputString("")
     {

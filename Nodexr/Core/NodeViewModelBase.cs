@@ -20,6 +20,7 @@ public interface INodeOutput<TOutput> : INodeOutput
 public interface INodeViewModel : INodeOutput
 {
     string NodeInfo { get; }
+    string NodeIcon { get; }
     string Title { get; }
     bool IsCollapsed { get; set; }
     Vector2 Pos { get; set; }
@@ -110,6 +111,8 @@ public abstract class NodeViewModelBase : INodeViewModel
     public abstract string CssColor { get; }
 
     public abstract string NodeInfo { get; }
+    
+    public abstract string NodeIcon { get; }
 }
 
 public abstract class NodeViewModelBase<TOutput> : NodeViewModelBase, INodeOutput<TOutput>

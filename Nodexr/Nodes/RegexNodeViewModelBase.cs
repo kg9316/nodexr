@@ -109,6 +109,7 @@ public abstract class RegexNodeViewModelBase : NodeViewModelBase<NodeResult>
 
     public override string CssName => Title.Replace(" ", "").ToLowerInvariant();
     public override string CssColor => $"var(--col-node-{CssName})";
+    public override string NodeIcon => $"fas fa-bell";
 
     protected virtual NodeResult GetOutput()
     {
