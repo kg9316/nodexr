@@ -1,7 +1,7 @@
 ﻿
 <div class="viewport sidebar panel fancy-scrollbar">
     <div class="node-list-heading">Palette</div>
-    @foreach (var category in exampleCategories)
+    @foreach (var category in categories)
     {
         <div class="node-list-subheading">@category.name</div>
         foreach (var node in category.nodes)
@@ -12,7 +12,7 @@
 </div>
 
 @code {
-    List<(string name, List<RegexNodeViewModelBase> nodes)> exampleCategories = new()
+    List<(string name, List<RegexNodeViewModelBase> nodes)> categories = new()
     {
         ("Normal",
         new ()

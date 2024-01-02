@@ -2,7 +2,6 @@
 using Microsoft.JSInterop;
 using Blazored.Toast.Services;
 using Nodexr.Core;
-using Nodexr.Core;
 
 public interface INoodleDragService
 {
