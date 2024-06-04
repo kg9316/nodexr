@@ -1,7 +1,5 @@
 ﻿namespace Nodexr.Core;
 
-using Nodexr.Core;
-
 public interface IInputPort : INodeInput, INoodleData
 {
     /// <summary>
